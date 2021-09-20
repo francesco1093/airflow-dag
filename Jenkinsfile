@@ -5,6 +5,12 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building from git repo..'
+                sh '''
+                        for filename in ./dags/*
+                        do
+                        echo $filename
+                        done;
+                '''
             }
         }
         stage('Test') {
