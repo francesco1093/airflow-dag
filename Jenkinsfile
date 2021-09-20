@@ -23,7 +23,7 @@ pipeline {
             steps {
                 sh '''
                 rm -rf /opt/jenkins/dags/*
-                mv ./dags /opt/jenkins/dags
+                mv ./dags/* /opt/jenkins/dags
                 '''
             }
         }
