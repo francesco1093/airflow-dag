@@ -22,6 +22,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh '''
+                rm /opt/jenkins/dags
                 mv ./dags /opt/jenkins/dags
                 '''
             }
