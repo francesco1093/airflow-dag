@@ -21,7 +21,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                echo '''
+                sh '''
                 scp -r ./dags fra-airflow:dags
                 '''
             }
