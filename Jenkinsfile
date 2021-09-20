@@ -22,7 +22,8 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh '''
-                rsync ./dags /opt/jenkins/dags
+                rm -r /opt/jenkins/dags/*
+                vm ./dags /opt/jenkins/dags
                 '''
             }
         }
