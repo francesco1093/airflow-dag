@@ -22,7 +22,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh '''
-                scp -r ./dags fra-airflow:dags
+                mv ./dags /opt/jenkins/dags
                 '''
             }
         }
