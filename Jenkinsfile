@@ -11,6 +11,7 @@ pipeline {
                         echo $filename
                         done;
                 '''
+
             }
         }
         stage('Test') {
@@ -20,7 +21,9 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                echo 'Deploying....'
+                echo '''
+                scp -r ./dags fra-airflow:dags
+                '''
             }
         }
     }
