@@ -56,7 +56,7 @@ default_args = {
 }
 
 with DAG(
-    'reddit-v3-final-test',
+    'reddit-v5',
     description='A basic reddit scraper DAG',
     tags=['reddit'],
     default_args=default_args
