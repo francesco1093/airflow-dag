@@ -14,7 +14,7 @@ with DAG(
     tags=['reliefweb'],
     schedule_interval = '15 * * * *',
     catchup=False,
-    start_date = date(2021,9,1),
+    start_date = datetime(2021,9,1)
 ) as dag:
 
     t1 = BashOperator(
