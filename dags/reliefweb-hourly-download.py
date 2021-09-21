@@ -10,7 +10,7 @@ import pyscripts.reliefweb as reliefweb
 default_args = {
     'owner': 'francesco',
     'depends_on_past': False,
-    'start_date': datetime.now(),
+    'start_date': days_ago(2),
     #'email': ['francesco1093@gmail.com'],
     #'email_on_failure': False,
     #'email_on_retry': False,
@@ -22,7 +22,7 @@ with DAG(
     'reliefweb-houly-download',
     description='Extracting hourly reports hourly from Relief Web',
     tags=['reliefweb'],
-    schedule_interval = '40 * * * *',
+    schedule_interval = '50 * * * *',
     catchup=False,
     default_args=default_args
 ) as dag:
