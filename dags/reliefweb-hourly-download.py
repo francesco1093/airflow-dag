@@ -10,7 +10,7 @@ import pyscripts.reliefweb as reliefweb
 default_args = {
     'owner': 'francesco',
     'depends_on_past': False,
-    'start_date': days_ago(2),
+    'start_date': datetime.now(),
     #'email': ['francesco1093@gmail.com'],
     #'email_on_failure': False,
     #'email_on_retry': False,
