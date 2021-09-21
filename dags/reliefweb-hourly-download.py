@@ -2,19 +2,19 @@ from airflow import DAG
 from airflow.operators.python import PythonOperator
 from airflow.operators.bash import BashOperator
 from airflow.utils.dates import days_ago
-from datetime import timedelta
+from datetime import date
 from datetime import datetime
 import pyscripts.reliefweb as reliefweb
 
 
 with DAG(
     'reliefweb-houly-download',
-    owner = 'francesco',
+    #owner = 'francesco',
     description='Extracting hourly reports hourly from Relief Web',
     tags=['reliefweb'],
-    schedule_interval = '10 * * * *',
+    schedule_interval = '15 * * * *',
     catchup=False,
-    start_date = datetime(2021,9,1)
+    start_date = date(2021,9,1),
 ) as dag:
 
     t1 = BashOperator(
