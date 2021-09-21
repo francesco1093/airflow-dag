@@ -16,13 +16,14 @@ default_args = {
     #'email_on_retry': False,
     'retries': 1,
     'retry_delay': timedelta(minutes=5),
-    'schedule_interval': '@hourly',
 }
 
 with DAG(
     'reliefweb-houly-download',
     description='Extracting hourly reports hourly from Relief Web',
     tags=['reliefweb'],
+    schedule_interval = '40 * * * *',
+    catchup=False,
     default_args=default_args
 ) as dag:
 
