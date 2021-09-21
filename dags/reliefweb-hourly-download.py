@@ -12,9 +12,9 @@ with DAG(
     owner = 'francesco',
     description='Extracting hourly reports hourly from Relief Web',
     tags=['reliefweb'],
-    schedule_interval = '0 * * * *',
+    schedule_interval = '10 * * * *',
     catchup=False,
-    start_date = datetime.datetime(2021,9,1)
+    start_date = datetime(2021,9,1)
 ) as dag:
 
     t1 = BashOperator(
