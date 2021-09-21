@@ -6,25 +6,15 @@ from datetime import timedelta
 from datetime import datetime
 import pyscripts.reliefweb as reliefweb
 
- 
-default_args = {
-    'owner': 'francesco',
-    'depends_on_past': False,
-    'start_date': days_ago(2),
-    #'email': ['francesco1093@gmail.com'],
-    #'email_on_failure': False,
-    #'email_on_retry': False,
-    #'retries': 1,
-    #'retry_delay': timedelta(minutes=5),
-}
 
 with DAG(
     'reliefweb-houly-download',
+    owner = 'francesco',
     description='Extracting hourly reports hourly from Relief Web',
     tags=['reliefweb'],
     schedule_interval = '0 * * * *',
     catchup=False,
-    default_args=default_args
+    start_date = datetime.datetime(2021,9,1)
 ) as dag:
 
     t1 = BashOperator(
