@@ -33,7 +33,7 @@ with DAG(
 
     t2 = PythonOperator(
         task_id='extract_reports',
-        python_callable=pyscripts.reliefweb,
+        python_callable=pyscripts.reliefweb.extract_res,
         op_kwargs={
             "resource":"reports",
             "datalake":"https://fradatalake.blob.core.windows.net/",
@@ -43,7 +43,7 @@ with DAG(
 
     t3 = PythonOperator(
     task_id='extract_disasters',
-    python_callable=pyscripts.reliefweb,
+    python_callable=pyscripts.reliefweb.extract_res,
     op_kwargs={
         "resource":"disasters",
         "datalake":"https://fradatalake.blob.core.windows.net/",
@@ -53,7 +53,7 @@ with DAG(
 
     t4 = PythonOperator(
     task_id='extract_sources',
-    python_callable=pyscripts.reliefweb,
+    python_callable=pyscripts.reliefweb.extract_res,
     op_kwargs={
         "resource":"sources",
         "datalake":"https://fradatalake.blob.core.windows.net/",
